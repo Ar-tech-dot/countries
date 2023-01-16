@@ -1,0 +1,44 @@
+@import "./fonts";
+@import "./color";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Typography */
+  --family: "Nunito Sans", sans-serif;
+  --fs-sm: 14px;
+  --fs-md: 16px;
+  --fw-light: 300;
+  --fw-normal: 600;
+  --fw-bold: 800;
+
+  --z-in-dropDwv: 2;
+  --radii: 0.5rem;
+}
+
+body[data-theme="light"] {
+  --color-text: #{$text-color-light};
+  --color-background: #{$bg-color-light};
+  --colors-ui-base: #{$ui-color-base-light};
+  --bg-color-selected: #{$selected-light};
+  --shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+body[data-theme="dark"] {
+  --color-text: #{$text-color-dark};
+  --color-background: #{$bg-color-dark};
+  --colors-ui-base: #{$ui-color-base-dark};
+  --bg-color-selected: #{$selected-dark};
+  --shadow: rgba(245, 245, 245, 0.2) 0 0 8px;
+}
+
+body {
+  font-family: var(--family);
+  font-weight: var(--fw-light);
+  color: var(--color-text);
+  background: var(--color-background);
+}

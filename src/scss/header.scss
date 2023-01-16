@@ -1,0 +1,30 @@
+.header {
+  box-shadow: var(--shadow);
+  background-color: var(--colors-ui-base);
+  transition: all 0.5s;
+  margin-bottom: 2rem;
+
+  span {
+    margin-left: 0.75rem;
+  }
+
+  &__title {
+    font-size: var(--fs-sm);
+    text-decoration: none;
+    font-weight: var(--fw-bold);
+    color: var(--color-text);
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-transform: capitalize;
+  }
+
+  &__switch-theme {
+    cursor: pointer;
+  }
+}

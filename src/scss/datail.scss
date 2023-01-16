@@ -1,0 +1,118 @@
+.detail {
+  &__button {
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+    background-color: var(--colors-ui-base);
+    box-shadow: var(--shadow);
+    line-height: 2.5;
+    border-radius: var(--radii);
+
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all 0.5s linear;
+
+    &:hover {
+      transform-origin: center;
+      transform: scale(1.1);
+    }
+  }
+
+  &__card-info {
+    display: grid;
+    grid-template-columns: minmax(400px, 600px) 1fr;
+    gap: 2rem;
+
+    @include for-desktop-small {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__flag {
+    display: block;
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__discription {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include for-desktop-small {
+      justify-content: start;
+    }
+  }
+
+  &__title {
+    margin-bottom: 1.5rem;
+    font-weight: var(--fw-normal);
+  }
+
+  &__wrapper-list-items {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+
+    @include for-phone-only {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  &__list-items {
+    list-style: none;
+  }
+
+  &__item-title {
+    line-height: 1.8rem;
+    margin-right: 0.7rem;
+    font-weight: var(--fw-bold);
+  }
+
+  &__borders {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-areas: "title items";
+
+    @include for-phone-only {
+      grid-template-areas: "title" "items";
+    }
+  }
+
+  &__borders-title {
+    margin-right: 1rem;
+    @include for-phone-only {
+      margin-right: 0;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__wrapper-border-items {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  &__border {
+    padding: 0 1rem;
+    background-color: var(--colors-ui-base);
+    box-shadow: var(--shadow);
+    line-height: 30px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+      transform-origin: center;
+      transform: scale(1.08);
+    }
+  }
+}

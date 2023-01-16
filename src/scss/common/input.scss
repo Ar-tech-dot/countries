@@ -1,0 +1,54 @@
+.input-field {
+  width: 300px;
+  position: relative;
+  @include for-phone-only {
+    width: 100%;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: var(--colors-ui-base);
+    padding: 1rem 2rem;
+    border: 0;
+    color: var(--color-text);
+    outline: none;
+    border-radius: var(--radii);
+    appearance: none;
+    font-size: var(--fs-md);
+    transition: border-color 0.3s;
+    box-shadow: var(--shadow);
+  }
+
+  &__input:focus,
+  &__input:hover {
+    outline: 1px solid rgb(79, 81, 94);
+  }
+
+  &__placeholder {
+    display: block;
+    position: absolute;
+    left: 1rem;
+    top: 0.8rem;
+    pointer-events: none;
+    transform-origin: left;
+    transition: top 0.3s, transform 0.3s, color 0.3s, left 0.3s;
+  }
+
+  &__input:focus + &__placeholder,
+  &__input:not(:focus):valid + &__placeholder {
+    top: -1.2rem;
+    left: 0.4rem;
+    transform: scale(0.85);
+  }
+  &__error-message {
+    font-size: 14px;
+  }
+  &__input.error {
+    outline: 1px solid $red-error;
+  }
+  &__placeholder.error,
+  &__error-message.error {
+    color: $red-error;
+  }
+}

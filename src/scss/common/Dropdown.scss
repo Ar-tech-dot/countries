@@ -1,0 +1,119 @@
+.dropdown {
+  position: relative;
+  font-size: var(--fs-md);
+  line-height: var(--fs-md);
+  min-width: 210px;
+  display: flex;
+  background-color: var(--colors-ui-base);
+  padding: 1.09rem 3.7rem 1.09rem 1rem;
+  margin-bottom: auto;
+  box-shadow: var(--shadow);
+  border-radius: var(--radii);
+  cursor: pointer;
+  
+  @include for-phone-only {
+    width: 60%;
+  }
+
+  &__p-left {
+    padding-left: 2.2rem;
+  }
+
+  &__icon-left {
+    position: absolute;
+    left: 0.7rem;
+  }
+
+  &__icon-right-item {
+    position: absolute;
+    right: 1rem;
+    display: flex;
+  }
+
+  &__icon-right {
+    transition: transform 0.6s;
+    margin-left: 2px;
+  }
+
+  .vertical-line {
+    border-right: 1px solid var(--color-text);
+  }
+
+  .rotate {
+    transform: rotate(180deg);
+    transition: transform 0.6s;
+  }
+}
+
+.down-list {
+  position: absolute;
+  background-color: var(--colors-ui-base);
+  box-shadow: var(--shadow);
+  z-index: var(--z-in-dropDwv);
+  overflow: hidden;
+  left: 0;
+  top: 3.8rem;
+  list-style: none;
+  width: 100%;
+  border-radius: var(--radii);
+  transform-origin: center center;
+  animation: items 0.4s linear;
+  animation-fill-mode: forwards;
+  padding: 0.5rem 0;
+
+  .selected {
+    background-color: var(--bg-color-selected);
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 2rem;
+    overflow: hidden;
+    transition: all 0.8s;
+
+    &:hover {
+      transform-origin: center;
+      transform: scale(1.07);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      display: block;
+      background: none repeat scroll 0 0 transparent;
+      height: 1px;
+      width: 0;
+      background: var(--color-text);
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    }
+
+    &:hover::after {
+      width: 70%;
+      left: 15%;
+    }
+  }
+
+  &__item-icon {
+    position: absolute;
+    left: 0.7em;
+    top: 0;
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+}
+
+@keyframes items {
+  0% {
+    transform: translate(0, -30%) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
