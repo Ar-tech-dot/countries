@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const Layout = () => (
   <>
@@ -8,7 +9,7 @@ const Layout = () => (
     <main className="container main">
       <Outlet />
     </main>
-    <footer></footer>
+    <Footer />
   </>
 );
 export default Layout;

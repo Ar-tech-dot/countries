@@ -7,4 +7,5 @@
 
 .container.main {
   margin-top: calc(var(--hight-header) + 2rem);
+  flex-grow: 1;
 }

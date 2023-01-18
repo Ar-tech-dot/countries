@@ -1,0 +1,45 @@
+.footer {
+  min-height: var(--hight-header);
+  box-shadow: var(--shadow);
+  background-color: var(--colors-ui-base);
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 1.1rem;
+
+    &:hover {
+      transform-origin: center;
+      transform: scale(1.07);
+    }
+
+    span {
+      position: relative;
+      vertical-align: super;
+      height: 100%;
+      align-items: center;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        display: block;
+        background: none repeat scroll 0 0 transparent;
+        height: 1px;
+        width: 0;
+        background: var(--color-text);
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      }
+
+      &:hover::after {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+}
