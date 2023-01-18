@@ -1,8 +1,17 @@
 .header {
+  height: var(--hight-header);
   box-shadow: var(--shadow);
   background-color: var(--colors-ui-base);
-  transition: all 0.5s;
-  margin-bottom: 2rem;
+  transition: background-color 0.5s, box-shadow 0.5s, transform 0.5s linear;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: var(--z-in-header);
+
+  &.hide {
+    transform: translateY(-100%);
+  }
 
   span {
     margin-left: 0.75rem;
